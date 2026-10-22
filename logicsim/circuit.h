@@ -5,6 +5,7 @@
 #include "../heap.h"
 #include "event.h"
 #include "gate.h"
+#include "wire.h"
 
 class Circuit 
 {
@@ -23,7 +24,7 @@ class Circuit
     std::vector<Gate*> m_gates;
     std::vector<Wire*> m_wires;
 		// we need to add the m_pq data member. It should be a min-heap of Event*;
-        
+    Heap<Event*, EventLess> m_pq;
 };
 
 #endif
